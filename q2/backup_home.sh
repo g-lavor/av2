@@ -1,11 +1,11 @@
 #!/bin/bash
 
-CURRENT_TIME=$(date +%H%M)
-SOURCE_DIR="$HOME"
-BACKUP_DIR="/tmp/backup"
-BACKUP_FILE="$BACKUP_DIR/backup_$CURRENT_TIME.tar.gz"
-mkdir -p "$BACKUP_DIR"
-rsync -a --exclude "$BACKUP_DIR" "$SOURCE_DIR/" "$BACKUP_DIR"
-tar -czf "$BACKUP_FILE" -C "$BACKUP_DIR" .
-rm -rf "$BACKUP_DIR"/*
-echo "Backup completo: $BACKUP_FILE"
+CT=$(date +%H%M)
+SD="$HOME"
+BD="/tmp/backup"
+BF="$BD/backup_$CT.tar.gz"
+mkdir -p "$BD"
+rsync -a --exclude "$BD" "$SD/" "$BD"
+tar -czf "$BF" -C "$BD" .
+rm -rf "$BD"/*
+echo "Backup completo: $BF"
