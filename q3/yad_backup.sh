@@ -35,9 +35,9 @@ tar -czf "$BACKUP_FILE" -C "$BACKUP_DIR" .
 
 rm -rf "$BACKUP_DIR"/*
 
-echo "Backup completo: $BACKUP_FILE"
+SCRIPT_PATH=$(readlink -f "$0")
 
-echo "$0" | at "$AT_TIME"
+echo "$SCRIPT_PATH" | at "$AT_TIME"
 echo "Backup agendado para $DATETIME."
 
 exit 0
